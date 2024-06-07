@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hostinfo
+  name: hostinfo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hostinfo
+  template:
+    metadata:
+      labels:
+        app: hostinfo
+    spec:
+      containers:
+      - image: finconreply/hostinfo
+        name: hostinfo
