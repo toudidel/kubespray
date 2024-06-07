@@ -68,13 +68,23 @@ In case of error `error: externally-managed-environment` use pip's argument `--b
 
 ```shell
 kubectl run hostinfo --image=finconreply/hostinfo
-kubectl create deployment hostinfo --image=finconreply/hostinfo --replicas 3
-
 kubectl expose pod hostinfo --port 8080 --target-port 8080
+
+kubectl create deployment hostinfo --image=finconreply/hostinfo --replicas 3
 kubectl expose deployment hostinfo --port 8080 --target-port 8080
 
 kubectl port-forward svc/hostinfo 38000:8080
 
 kubectl delete service hostinfo
 kubectl delete deployment hostinfo
+```
+
+```shell
+kubectl create -f deployment.yaml
+kubectl create -f service.yaml
+
+kubectl port-forward svc/hostinfo 38000:8080
+
+kubectl delete -f service.yaml
+kubectl delete -f deployment.yaml
 ```
