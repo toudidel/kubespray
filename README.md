@@ -60,7 +60,15 @@ In case of error `error: externally-managed-environment` use pip's argument `--b
 
          export KUBECONFIG=~/config
 
-13. Now you should be able to run command on your k8s cluster. For example:
+13. (optional) install kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
+        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+        sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+        kubectl version --client
+
+15. Now you should be able to run command on your k8s cluster. For example:
 
          kubectl get node
 
