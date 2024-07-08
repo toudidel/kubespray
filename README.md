@@ -23,7 +23,7 @@ In case of error `error: externally-managed-environment` use pip's argument `--b
 
 5. Declare your nodes IP addresses
 
-        declare -a IPS=(192.168.0.115 192.168.0.117 192.168.0.118)
+        declare -a IPS=(192.168.10.81 192.168.10.82 192.168.10.83)
 
 6. Prepare inventory
 
